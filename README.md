@@ -1,2 +1,2 @@
 # Depi-ML-Engineer-GradProject
-dataset used in the project is :"https://www.kaggle.com/datasets/hearfool/vggface2"
+dataset used in the project is :"https://www.kaggle.com/datasets/jessicali9530/lfw-dataset"
