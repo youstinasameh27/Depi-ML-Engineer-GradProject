@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام التعرف على الوجوه</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 نظام التعرف على الوجوه</h1>
+            <p class="subtitle">سجل وجهك أو قم بالدخول باستخدام الكاميرا</p>
+        </header>
+
+        <div class="main-content">
+            <!-- قسم الكاميرا -->
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" autoplay webkit-playsinline muted></video>
+                    <canvas id="canvas"></canvas>
+                    <div class="camera-overlay" id="overlay">
+                        <div class="face-frame"></div>
+                    </div>
+                </div>
+                
+                <div class="camera-controls">
+                    <button id="startCamera" class="btn btn-primary">
+                        <span>📷</span> تشغيل الكاميرا
+                    </button>
+                    <button id="stopCamera" class="btn btn-secondary">
+                        <span>⏹️</span> إيقاف الكاميرا
+                    </button>
+                </div>
+            </div>
+
+            <!-- قسم الإجراءات -->
+            <div class="actions-section">
+                <div class="mode-selector">
+                    <button id="registerMode" class="mode-btn active">
+                        <span>📝</span>
+                        <div>
+                            <h3>تسجيل جديد</h3>
+                            <p>سجل وجهك لأول مرة</p>
+                        </div>
+                    </button>
+                    <button id="recognizeMode" class="mode-btn">
+                        <span>🔍</span>
+                        <div>
+                            <h3>تسجيل دخول</h3>
+                            <p>تعرف على وجهك</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- نموذج التسجيل -->
+                <div id="registerForm" class="action-form">
+                    <div class="form-group">
+                        <label for="userName">الاسم الكامل</label>
+                        <input type="text" id="userName" placeholder="أدخل اسمك" required>
+                    </div>
+                    <button id="captureRegister" class="btn btn-success btn-large">
+                        <span>📸</span> التقاط الصورة والتسجيل
+                    </button>
+                </div>
+
+                <!-- نموذج التعرف -->
+                <div id="recognizeForm" class="action-form">
+                    <p class="info-text">اضغط على الزر لالتقاط صورة والتعرف على الوجه</p>
+                    <button id="captureRecognize" class="btn btn-info btn-large">
+                        <span>🔎</span> التقاط الصورة والتعرف
+                    </button>
+                </div>
+
+                <!-- نتيجة العملية -->
+                <div id="result" class="result"></div>
+            </div>
+        </div>
+
+        <!-- قائمة المستخدمين المسجلين -->
+        <div class="users-section">
+            <h2>👥 المستخدمون المسجلون (<span id="userCount">0</span>)</h2>
+            <div id="usersList" class="users-list"></div>
+            <button id="refreshUsers" class="btn btn-secondary btn-small">
+                <span>🔄</span> تحديث القائمة
+            </button>
+        </div>
+
+        <!-- معلومات النظام -->
+        <div class="info-panel">
+            <h3>ℹ️ تعليمات الاستخدام</h3>
+            <ul>
+                <li>للتسجيل لأول مرة: اختر "تسجيل جديد"، أدخل اسمك، والتقط صورتك</li>
+                <li>لتسجيل الدخول: اختر "تسجيل دخول"، والتقط صورتك</li>
+                <li>تأكد من أن وجهك واضح وفي إضاءة جيدة</li>
+                <li>انظر مباشرة إلى الكاميرا</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>نظام التعرف على الوجوه © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

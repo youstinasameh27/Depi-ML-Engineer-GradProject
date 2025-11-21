@@ -1,0 +1,8 @@
+flask
+opencv-python
+mtcnn
+numpy
+tensorflow
+keras
+scikit-learn
+pickle-mixin
